@@ -62,7 +62,7 @@ const FileList = () =>{
    useEffect (() => {
     const fetchData = async () =>{
       try{
-        const response = await fetch('https://node-express-mysql-api.onrender.com/files/getFilesFromDabatase');
+        const response = await fetch('https://node-express-mysql-api.onrender.com/files/getFilesFromDatabase');
         const data = await response.json() ;
         setFiles(data.filesFromDB);
         console.log(data.filesFromDB);

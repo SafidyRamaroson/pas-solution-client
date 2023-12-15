@@ -41,8 +41,6 @@ function Register () {
                 body:JSON.stringify({email:values.email,password:values.password})
             });
             if(response.ok){
-                // console.log("Connecte avec succes");
-                // console.log(response);
                 navigate('/dashboard');
                 toast.success("User created successuffly !",{
                     position:toast.POSITION.TOP_CENTER,
