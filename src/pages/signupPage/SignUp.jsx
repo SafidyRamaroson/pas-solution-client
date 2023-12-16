@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Grid ,
     Box,
@@ -18,11 +18,12 @@ import logo from "../../assets/images/logo.png";
 import CustomButton from "../../components/shared/CustomButton";
 import { validationSchema } from './validationSchemaSingup';
 import { GoogleLogin } from "react-google-login";
-// import styled  from '@emotion/styled';
+import{ Backdrop, CircularProgress} from '@mui/material';
 
 
 function SignUp () {
 
+    const [registered,setRegistered]= useState(true)
     const initialValues = {
         name:"",
         email:"",
@@ -32,7 +33,7 @@ function SignUp () {
     const handleSubmit = async(values) =>{
         
         try{
-            console.log(values);
+            setRegistered(false)
             const response = await fetch('https://node-express-mysql-api.onrender.com/user/createUser',{
                 method:'POST',
                 headers:{
@@ -43,6 +44,7 @@ function SignUp () {
 
             const data = await response.text();
             alert(data);
+            setRegistered(true)
         } catch(error){
             console.error("Error:",error);
         }
@@ -181,8 +183,9 @@ function SignUp () {
                             onBlur={formik.handleBlur}
                             error={formik.touched.password && Boolean(formik.errors.password)}
                             helperText={formik.touched.password && formik.errors.password}
-                        />  
-                       <Button
+                        />
+                        {registered ? 
+                            <Button
                         type="submit"
                         sx={{
                             width:"100%",
@@ -202,7 +205,10 @@ function SignUp () {
                                     opacity:.9
                             }
                         }}
-                       >sign up</Button>
+                       >sign up</Button>:<Backdrop>
+                                        <CircularProgress width="100%" height="100%" color="grey"/>
+                                </Backdrop>}
+                      
                        {/* <Typography component="h3" sx={{textAlign:"center",fontFamily:"Roboto", fontWeight:"500", fontSize:"16px"}}>OR</Typography> */}
                        
                         {/* <StyledGoogleLogin

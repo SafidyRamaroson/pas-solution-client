@@ -16,8 +16,7 @@ import { validationSchema } from './validationSchema';
 import { styled , Button} from '@mui/material';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Backdrop from '@mui/material';
-import CircularProgress from '@mui/material';
+import{ Backdrop, CircularProgress} from '@mui/material';
 
 const initialValues = {
     firstName:"",

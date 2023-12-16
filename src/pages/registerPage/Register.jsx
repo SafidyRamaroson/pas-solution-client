@@ -21,9 +21,11 @@ import { ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { validationSchema } from './validationSchemaRegister';
 import { GoogleLogin } from 'react-google-login'
+import{ Backdrop, CircularProgress} from '@mui/material';
 
 function Register () {
 
+    const [login,setLogin]= useState(true);
     const navigate = useNavigate();
     const initialValues = {
         email:"",
@@ -33,6 +35,7 @@ function Register () {
     const handleRegister = async(values) =>{
         
         try{
+                setLogin(false);
             const response = await fetch('https://node-express-mysql-api.onrender.com/user/login',{
                 method:"POST",
                 headers:{
@@ -41,8 +44,9 @@ function Register () {
                 body:JSON.stringify({email:values.email,password:values.password})
             });
             if(response.ok){
+                setLogin(true)
                 navigate('/dashboard');
-                toast.success("User created successuffly !",{
+                toast.success("Welcome to your account!",{
                     position:toast.POSITION.TOP_CENTER,
                     duration:5000
                 })
@@ -172,7 +176,7 @@ function Register () {
                         <Box mY ={2}>
                             <Typography variant="body2" ><CustomLink to="forgotPassword">Forgot your password ?</CustomLink></Typography>
                         </Box>
-                        <Button
+                        {login ?   <Button
                             type='submit'
                         sx={{
                             width:"100%",
@@ -191,7 +195,10 @@ function Register () {
                                     opacity:.9
                             }
                         }}
-                        >Log in</Button>
+                        >Log in</Button>:<Backdrop>
+                                        <CircularProgress width="100%" height="100%" color="grey"/>
+                                </Backdrop>}
+                      
                         {/* <Typography component="h3" sx={{textAlign:"center",fontFamily:"Roboto", fontWeight:"500", fontSize:"16px", marginTop:"5px"}}>OR</Typography> */}
                         {/* <StyledGoogleLogin
                             clientId ={null}
