@@ -45,7 +45,7 @@ function Register () {
             });
             if(response.ok){
                 setLogin(true)
-                navigate('/dashboard');
+                navigate('/videos-supports');
                 toast.success("Welcome to your account!",{
                     position:toast.POSITION.TOP_CENTER,
                     duration:5000
@@ -195,9 +195,25 @@ function Register () {
                                     opacity:.9
                             }
                         }}
-                        >Log in</Button>:<Backdrop>
-                                        <CircularProgress width="100%" height="100%" color="grey"/>
-                                </Backdrop>}
+                        >Log in</Button>:<Button
+                        sx={{
+                            width:"100%",
+                            backgroundColor:"#F4F4F4",
+                            color:"#fff",
+                            cursor:"pointer",
+                            borderRadius:"10px",
+                            padding:"8px 24px",
+                            marginTop:"1rem",
+                            border:"2px solid transparent",
+                            fontFamily:"Roboto",
+                            fontSize:"12px",
+                            fontWeight:700,
+                            "&:hover":{
+                                    backgroundColor:"#F4F4F4",
+                                    opacity:.9
+                            }
+                        }}
+                        >Logging in ...</Button>}
                       
                         {/* <Typography component="h3" sx={{textAlign:"center",fontFamily:"Roboto", fontWeight:"500", fontSize:"16px", marginTop:"5px"}}>OR</Typography> */}
                         {/* <StyledGoogleLogin

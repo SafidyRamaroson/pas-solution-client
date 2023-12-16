@@ -223,9 +223,11 @@ function FormContact(){
                         {sent ? <StyledButton
                                     type='submit'
                                 >Send message
-                                </StyledButton> :<Backdrop>
-                                        <CircularProgress width="100%" height="100%" color="grey"/>
-                                </Backdrop>}
+                                </StyledButton> :
+                                <StyledButton
+                                backgroundColor="#F4F4F4 !important"
+                                >Sending message ...
+                                </StyledButton>}
                         
                     </Grid>
                 </Grid>

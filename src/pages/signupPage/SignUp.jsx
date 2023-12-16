@@ -205,9 +205,26 @@ function SignUp () {
                                     opacity:.9
                             }
                         }}
-                       >sign up</Button>:<Backdrop>
-                                        <CircularProgress width="100%" height="100%" color="grey"/>
-                                </Backdrop>}
+                       >sign up</Button>: <Button
+                        sx={{
+                            width:"100%",
+                            backgroundColor:"#F4F4F4",
+                            color:"#fff",
+                            cursor:"pointer",
+                            padding:"8px 24px",
+                            borderRadius:"10px",
+                            marginTop:"1rem",
+                            marginBottom:".5rem",
+                            border:"2px solid transparent",
+                            fontFamily:"Roboto",
+                            fontSize:"12px",
+                            fontWeight:700,
+                            "&:hover":{
+                                    backgroundColor:"#4285F4",
+                                    opacity:.9
+                            }
+                        }}
+                       >sign up ...</Button>}
                       
                        {/* <Typography component="h3" sx={{textAlign:"center",fontFamily:"Roboto", fontWeight:"500", fontSize:"16px"}}>OR</Typography> */}
                        
