@@ -54,6 +54,9 @@ function SignUp () {
         validationSchema,
         onSubmit:(values) => {
             handleSubmit(values);
+        },
+        onReset:(values) =>{
+            values = {...values,...initialValues}
         }
     })
 
@@ -67,37 +70,31 @@ function SignUp () {
         textDecoration:"none",
     }));
 
-    const StyledGoogleLogin =styled(GoogleLogin)(() =>({
-        width:"100%",
-        paddingLeft:"34px",
-        borderRadius:"100px !important",
-        boxShadow:"none !important",
-        border:"2px solid #232826 !important",
-        '& div':{
-            borderRadius:"85px !important",
-            margin:"2px 8px 2px 2px !important",
-        },
-        '& span':{
-            marginX:"auto !important",
-            display:"block",
-            justifyContent:"center",
-            alignItems:"center",
-            marginRight:"25px !important"
-        }
-    }));
-
-    // const CustomGoogleIcon = styled.div`
-    //     svg{
-    //         borderRadius:"66px !important"
+    // const StyledGoogleLogin =styled(GoogleLogin)(() =>({
+    //     width:"100%",
+    //     paddingLeft:"34px",
+    //     borderRadius:"100px !important",
+    //     boxShadow:"none !important",
+    //     border:"2px solid #232826 !important",
+    //     '& div':{
+    //         borderRadius:"85px !important",
+    //         margin:"2px 8px 2px 2px !important",
+    //     },
+    //     '& span':{
+    //         marginX:"auto !important",
+    //         display:"block",
+    //         justifyContent:"center",
+    //         alignItems:"center",
+    //         marginRight:"25px !important"
     //     }
-    // `
+    // }));
 
-    const StyledTextField = styled(TextField)({
-        '& .MuiOutlinedInput-root':{
-            borderRadius:"10px",
-            paddingY:"6px"
-        }
-    })
+    // const StyledTextField = styled(TextField)({
+    //     '& .MuiOutlinedInput-root':{
+    //         borderRadius:"10px",
+    //         paddingY:"6px"
+    //     }
+    // })
     return(
        <Grid container minHeight="100vh"  
        sx={{
@@ -139,24 +136,23 @@ function SignUp () {
                         </CustomLink>
                     </Box>
                     <Box sx={{margin:"20px 30px",padding:"10px",maxWidth:"400px"}}>
-                    <form mt={3} mb={2} onSubmit={formik.handleSubmit}>
-                        <StyledTextField
+                    <form mt={3} mb={2} onResetg={formik.handleReset} onSubmit={formik.handleSubmit}>
+                        <TextField
                             name='name'
                             type="text"
                             variant="outlined"
                             label="name"
                             placeholder="your name"
                             size="small"
-                            fullWidth
                             margin="normal"
                             value={formik.values.name}
                             onChange={formik.handleChange}
-                            // onBlur={formik.handleBlur}
+                            onBlur={formik.handleBlur}
                             error={formik.touched.name && Boolean(formik.errors.name)}
                             helperText={formik.touched.name && formik.errors.name}
-                            
+                            fullWidth  
                         />
-                        <StyledTextField
+                        <TextField
                             name='email'
                             type="email"
                             variant="outlined"
@@ -171,7 +167,7 @@ function SignUp () {
                             error={formik.touched.email && Boolean(formik.errors.email)}
                             helperText={formik.touched.email && formik.errors.email}
                         />
-                        <StyledTextField
+                        <TextField
                             name='password'
                             type="password"
                             variant="outlined"
@@ -182,7 +178,7 @@ function SignUp () {
                             margin="normal"
                             value={formik.values.password}
                             onChange={formik.handleChange}
-                            // onBlur={formik.handleBlur}
+                            onBlur={formik.handleBlur}
                             error={formik.touched.password && Boolean(formik.errors.password)}
                             helperText={formik.touched.password && formik.errors.password}
                         />  
@@ -194,7 +190,7 @@ function SignUp () {
                             color:"#fff",
                             cursor:"pointer",
                             padding:"8px 24px",
-                            borderRadius:"100px",
+                            borderRadius:"10px",
                             marginTop:"1rem",
                             marginBottom:".5rem",
                             border:"2px solid transparent",
@@ -207,7 +203,7 @@ function SignUp () {
                             }
                         }}
                        >sign up</Button>
-                       <Typography component="h3" sx={{textAlign:"center",fontFamily:"Roboto", fontWeight:"500", fontSize:"16px"}}>OR</Typography>
+                       {/* <Typography component="h3" sx={{textAlign:"center",fontFamily:"Roboto", fontWeight:"500", fontSize:"16px"}}>OR</Typography> */}
                        
                         {/* <StyledGoogleLogin
                                 // clientId ={null}

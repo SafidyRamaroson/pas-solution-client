@@ -5,7 +5,7 @@ import {
     Box,
     Typography, 
     Checkbox,
-    FormControlLabel
+    FormControlLabel,
     } 
     from "@mui/material";
 import CustomButton from "../shared/CustomButton";
@@ -13,7 +13,11 @@ import {Container} from "@mui/system";
 import { useFormik } from "formik";
 import * as yup from 'yup';
 import { validationSchema } from './validationSchema';
-import { styled , Button} from '@mui/material'
+import { styled , Button} from '@mui/material';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Backdrop from '@mui/material';
+import CircularProgress from '@mui/material';
 
 const initialValues = {
     firstName:"",
@@ -26,6 +30,7 @@ function FormContact(){
     
 
     const [checked,setChecked] = useState(false);
+    const [sent,setSent] = useState(true);
 
     const handleChange =(e) =>{
         setChecked(e.target.checked);
@@ -33,6 +38,7 @@ function FormContact(){
  
     const handleSendMessage = async() => {
         try{
+            setSent(true);
             const response = await fetch('https://node-express-mysql-api.onrender.com/message/sendMessage',{
                 method:"POST",
                 headers:{
@@ -41,7 +47,14 @@ function FormContact(){
                 body:JSON.stringify(formik.values)
             });
             
-           alert(await response.text());
+        //    alert(await response.text());
+           if(response.ok){
+              setSent(true);
+              toast.success("Sent message successfully!",{
+                position:toast.POSITION.TOP_CENTER,
+                duration:5000
+            })
+           }
         }catch(error){
             console.error("Erreur lors de l'envoi message ")
         }
@@ -208,10 +221,13 @@ function FormContact(){
                         />
                     </Grid>
                     <Grid item lg={5} md={6}>
-                        <StyledButton
-                            type='submit'
-                        >Send message
-                        </StyledButton> 
+                        {sent ? <StyledButton
+                                    type='submit'
+                                >Send message
+                                </StyledButton> :<Backdrop>
+                                        <CircularProgress width="100%" height="100%" color="grey"/>
+                                </Backdrop>}
+                        
                     </Grid>
                 </Grid>
             </form>
