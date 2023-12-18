@@ -8,7 +8,7 @@ import AboutUsPage from '../pages/AboutUsPage/AboutUsPage';
 import ContactPage from '../pages/contactPage/ContactPage';
 import SignUp from '../pages/signupPage/SignUp';
 import Register from '../pages/registerPage/Register';
-import Dashboard from '../pages/dashboardPage/Dashboard';
+// import Dashboard from '../pages/dashboardPage/Dashboard';
 import VideoSupport from './../pages/dashboardPage/pages/videoSupports/VideoSupport';
 import DocsSupport from './../pages/dashboardPage/pages/docsSupports/DocsSupport';
 
@@ -24,7 +24,7 @@ function AppNavigation (){
                 <Route path='/sign up' element={<SignUp/>}></Route>
                 <Route path='/register' element={<Register/>}>
                 </Route>        
-                <Route path='/dashboard' element={<Dashboard/>}></Route>
+                {/* <Route path='/dashboard' element={<Dashboard/>}></Route> */}
                 <Route path='/videos-supports' element={<VideoSupport/>}></Route>
                 <Route path='/docs-supports' element={<DocsSupport/>}></Route>
                 <Route path='/all-supports' element={<DocsSupport/>}></Route>
