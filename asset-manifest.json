@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Pas-client/static/css/main.d13b29d0.css",
+    "main.js": "/Pas-client/static/js/main.50416352.js",
+    "static/media/Sage Software Mauritius_1080p.mp4": "/Pas-client/static/media/Sage Software Mauritius_1080p.f03030d8148688d9272d.mp4",
+    "static/media/heroImg.jpg": "/Pas-client/static/media/heroImg.0a9f17162d079ab68ce0.jpg",
+    "static/media/bgAboutUs.png": "/Pas-client/static/media/bgAboutUs.48cbc0abb6689aee1cd8.png",
+    "static/media/bgPasSolutionHome.png": "/Pas-client/static/media/bgPasSolutionHome.82fbc90e59ffdf8c62ee.png",
+    "static/media/gradient-background.png": "/Pas-client/static/media/gradient-background.9f27f2b138fcc4bc8b09.png",
+    "static/media/whoAreWe.jpg": "/Pas-client/static/media/whoAreWe.acf7f696220bf3e99ce8.jpg",
+    "static/media/heroImage.jpg": "/Pas-client/static/media/heroImage.a9b9e4bd6dbab99e696f.jpg",
+    "static/media/logo.png": "/Pas-client/static/media/logo.e40955ced1d90ad74976.png",
+    "index.html": "/Pas-client/index.html",
+    "main.d13b29d0.css.map": "/Pas-client/static/css/main.d13b29d0.css.map",
+    "main.50416352.js.map": "/Pas-client/static/js/main.50416352.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d13b29d0.css",
+    "static/js/main.50416352.js"
+  ]
+}
