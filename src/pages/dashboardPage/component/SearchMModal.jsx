@@ -87,7 +87,7 @@ const SearchModal = ({ open, handleClose }) => {
         </Box>
         <TableContainer sx={{height:"400px",marginTop:"12px"}}>
           <Table>
-            <TableHead sx={{display:"none"}}>
+            <TableHead sx={{display:"none !important"}}>
               <TableRow>
                 <TableCell>icon</TableCell>
                 <TableCell>Name</TableCell>

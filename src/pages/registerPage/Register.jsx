@@ -49,10 +49,11 @@ function Register () {
                 toast.success("Welcome to your account!",{
                     position:toast.POSITION.TOP_CENTER,
                     duration:5000
-                })
+                });
             }else{
-                toast.error("Error credentiels")
-                console.error("Identifiants incorrects");
+                toast.error("You don't have an account");
+                navigate('/sign up');
+                values = [...values,...initialValues]
             }
         }catch(error){
             console.error("Erreur lors de la connexion ", error);
@@ -209,8 +210,9 @@ function Register () {
                             fontSize:"12px",
                             fontWeight:700,
                             "&:hover":{
-                                    backgroundColor:"#F4F4F4",
-                                    opacity:.9
+                                    backgroundColor:"#4285F4",
+                                    opacity:.7,
+                                    cursor:"not-allowed"
                             }
                         }}
                         >Logging in ...</Button>}

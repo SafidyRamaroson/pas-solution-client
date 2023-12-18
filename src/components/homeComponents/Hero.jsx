@@ -2,6 +2,7 @@ import React from "react"
 import { CustomBox , Title, ImageHook } from "../../pages/HomePage/home.styled";
 import CustomButton from "../shared/CustomButton";
 import backgroundHero from "../../assets/images/gradient-background.png";
+
 import whereAreWe from './../../assets/images/whoAreWe.jpg'
 import { Box, Container, Typography} from "@mui/material";
 import { motion } from 'framer-motion'
@@ -55,6 +56,7 @@ export default function Hero (){
                             gap:'5px'
                         }}>
                     {/* 7286D3 */}
+                        <CustomLink to="/register">
                             <CustomButton
                             component={motion.button}
                             initial ={{opacity:0}}
@@ -66,8 +68,9 @@ export default function Hero (){
                             seeOurService={true}
                             buttonText="Registry free"
                             ></CustomButton>
+                        </CustomLink>
                             <Box padding="15px" marginLeft="5px" >
-                                <CustomLink to="#" >
+                                <CustomLink to="/about us" >
                                     <Typography color="#4285F4">Learn more</Typography>
                                 </CustomLink>
                             </Box>

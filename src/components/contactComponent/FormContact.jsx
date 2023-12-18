@@ -225,7 +225,9 @@ function FormContact(){
                                 >Send message
                                 </StyledButton> :
                                 <StyledButton
-                                backgroundColor="#F4F4F4 !important"
+                                    backgroundColor="#4285F4"
+                                    opacity=".7"
+                                    cursor="not-allowed"
                                 >Sending message ...
                                 </StyledButton>}
                         

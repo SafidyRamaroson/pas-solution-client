@@ -19,11 +19,14 @@ import CustomButton from "../../components/shared/CustomButton";
 import { validationSchema } from './validationSchemaSingup';
 import { GoogleLogin } from "react-google-login";
 import{ Backdrop, CircularProgress} from '@mui/material';
+import { useNavigate } from 'react-router';
+import { ToastContainer, toast} from 'react-toastify';
 
 
 function SignUp () {
 
-    const [registered,setRegistered]= useState(true)
+    const [registered,setRegistered]= useState(true);
+    const navigate = useNavigate();
     const initialValues = {
         name:"",
         email:"",
@@ -43,8 +46,12 @@ function SignUp () {
             });
 
             const data = await response.text();
-            alert(data);
-            setRegistered(true)
+            navigate('/register');
+            toast.success(data,{
+                position:toast.POSITION.TOP_CENTER,
+                duration:5000
+            });
+            setRegistered(true);
         } catch(error){
             console.error("Error:",error);
         }
@@ -221,7 +228,8 @@ function SignUp () {
                             fontWeight:700,
                             "&:hover":{
                                     backgroundColor:"#4285F4",
-                                    opacity:.9
+                                    opacity:.7,
+                                    cursor:"not-allowed"
                             }
                         }}
                        >sign up ...</Button>}

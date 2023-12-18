@@ -1,5 +1,10 @@
 import MainLayout from '../../layout/MainLayout';
 import bgPasSolutionHome from "../../assets/images/bgPasSolutionHome.png";
+import trainingImg from "../../assets/images/training.jpg";
+import supportSage from "../../assets/images/supportSage.jpg";
+import sage from "../../assets/images/Sage.jpg";
+import sellIT from "../../assets/images/Sell IT.jpg";
+
 import {
     Typography,
     Grid,
@@ -85,14 +90,14 @@ export default function AboutUsPage () {
                         <Box sx={{minHeight:"420px",display:"flex",justifyContent:"center", alignItems:"center",marginBottom:"40px",maxWidth:"1000px"}}>
                             <Box>
                                 <Box marginLeft="20px" marginBottom="30px" padding="10px" backgroundColor="#F4F4F4">
-                                        <img style={{maxHeight:"200px"}}src={bgPasSolutionHome} alt="pas"></img>
+                                        <img style={{maxHeight:"200px"}}src={supportSage} alt="pas"></img>
                                         <Box marginTop="15px">
                                             <Typography component="h3" color="#000" fontWeight="700" fontFamily="Roboto">Sage support</Typography>
                                         </Box>
                                 </Box>
 
                                 <Box marginLeft="20px" marginBottom="30px" padding="10px" backgroundColor="#F4F4F4">
-                                    <img style={{maxHeight:"200px"}} src={bgPasSolutionHome} alt="pas"></img>
+                                    <img style={{maxHeight:"200px"}} src={sellIT} alt="pas"></img>
                                     <Box marginTop="15px">
                                         <Typography component="h3"  fontWeight="700" fontFamily="Roboto" color="#000">Sell IT Tech</Typography>
                                     </Box>
@@ -100,13 +105,13 @@ export default function AboutUsPage () {
                             </Box>
                             <Box>
                                 <Box marginLeft="20px" marginBottom="30px" padding="10px" backgroundColor="#F4F4F4">
-                                        <img style={{maxHeight:"200px"}}src={bgPasSolutionHome} alt="pas"></img>
+                                        <img style={{maxHeight:"200px"}}src={trainingImg} alt="pas"></img>
                                     <Box marginTop="15px">
                                         <Typography component="h3"  fontWeight="700" fontFamily="Roboto" color="#000">Training</Typography>
                                     </Box>
                                 </Box>
                                 <Box marginLeft="20px" marginBottom="30px"padding="10px" backgroundColor="#F4F4F4">
-                                        <img style={{maxHeight:"200px"}} src={bgPasSolutionHome} alt="pas"></img>
+                                        <img style={{maxHeight:"200px"}} src={sage} alt="pas"></img>
                                     <Box marginTop="15px">
                                         <Typography component="h3" color="#000"  fontWeight="700" fontFamily="Roboto">Sage</Typography>
                                     </Box>
